@@ -1,0 +1,65 @@
+body {
+  background-color: hotpink;
+  text-align: center;
+  font-family: "Gill Sans", sans-serif;
+}
+
+body > div {
+  background-color: steelblue;
+  border: 3px solid purple;
+  padding: 30px;
+  width: 650px;
+  margin: auto;
+}
+
+body > div:nth-child(2), body > div:nth-child(5), body > div:nth-child(8) {
+  border-bottom: 1px dashed purple;
+  padding-bottom: 0;
+}
+body > div:nth-child(3), body > div:nth-child(6), body > div:nth-child(9) {
+  border-top: none;
+  padding-bottom: 0;
+}
+
+button {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1em;
+  font-weight: 100;
+  font-family: inherit;
+  background-color: lightpink;
+  border: 3px solid purple;
+  border-radius: 25px;
+  width: 100px;
+  margin-right: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+input[type="form"] {
+  font-size: 1.0em;
+  font-family: inherit;
+  text-align: center;
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid red;
+}
+
+input[type="form"]:focus {
+  outline: none;
+}
+
+.inlineBlock {
+  display: inline-block;
+  width: 600px;
+}
+
+.italic-largerfont-n-yellow {
+  font-style: italic;
+  font-size: 24px;
+  color: yellow;
+}
