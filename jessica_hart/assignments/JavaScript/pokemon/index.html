@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokémon</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log("JQuery is up and running");
+        /* Will display all Pokemon 1 - 151 */
+        for (var i = 1; i < 152; i++) {
+          $( "body" ).append('<img src="http://pokeapi.co/media/img/'+i+'.png" />');
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

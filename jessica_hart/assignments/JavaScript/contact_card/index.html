@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log("JQuery is up and running");
+        $('form').submit(function() {
+          var values = {};
+          var str = "Click for description!";
+          $.each($('form').serializeArray(), function(i, field) {
+            values[field.name] = field.value;
+          });
+          //console.log(values);
+          console.log(values.nfirst, values.nlast, values.desc);
+          $('#card_stack').append('<div class="card"><div class="card_name"><h1>'+values.nfirst+' '+values.nlast+'</h1>'+'<p>'+str+'</p></div><div class="card_info"><p>'+values.desc+'</p></div></div>');
+          return false
+        });
+        /* Hide the card name and reveal the card info on click */
+        $(document).on('click', '.card_name', function(){
+          console.log("The card has been clicked");
+          $(this).siblings('.card_info').css('display', 'block');
+          $(this).css('display', 'none');
+        });
+        /* Hide the card info and reveal the card name */
+        $(document).on('click', '.card_info', function(){
+          console.log("The card has been clicked");
+          $(this).siblings('.card_name').css('display', 'block');
+          $(this).css('display', 'none');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <form>
+        <ul>
+          <li>
+            <label>First Name:</label>
+            <input type="text" name="nfirst" value="Michael" />
+          </li>
+          <li>
+            <label>Last Name:</label>
+            <input type="text" name="nlast" value="Choi" />
+          </li>
+          <li>
+            <label>Description:</label>
+          </li>
+          <li>
+            <textarea name="desc">Coding Dojo's fearless leader. Master of instruction.</textarea>
+          </li>
+        </ul>
+        <input type="submit" value="Add User">
+      </form>
+      <div id="card_stack">
+      </div>
+    </div>
+  </body>
+</html>
