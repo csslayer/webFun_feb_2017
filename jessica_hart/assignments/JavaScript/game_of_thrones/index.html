@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Game of Thrones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        console.log("JQuery is up and running");
+        $('li').click(function() {
+          var house = $(this).attr('id');
+          var url = 'http://anapioficeandfire.com/api/houses/';
+          if (house == 'stark') url += 362;
+          else if (house == 'targaryen') url += 378;
+          else if (house == 'lannister') url += 229;
+          else if (house == 'baratheon') url += 17;
+          console.log(url);
+          $.get(url, function(res) {
+            console.log(res);
+            var html_str = '<h1>House Details</h1><p>Name: '+res.name+'</p><p>Words: '+res.words+'</p><p>Titles: ';
+            for(var i = 0; i < res.titles.length-1; i++) {
+                html_str += res.titles[i]+', ';
+            }
+            html_str += ' '+res.titles[res.titles.length-1]+'</p>'; // To prevent extra comma at the end
+            $("#info").html(html_str);
+          }, 'json');
+          return false;
+        });
+      });
+    </script>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px;
+        padding: 0px;
+      }
+      #wrapper {
+        margin: 20px auto;
+        width: 960px;
+      }
+      #stark { background-image: url("img/stark.jpg"); }
+      #targaryen { background-image: url("img/targaryen.jpg"); }
+      #lannister { background-image: url("img/lannister.jpg"); }
+      #baratheon { background-image: url("img/baratheon.png"); }
+      #info {
+        border: 5px solid #000;
+        margin: 100px auto;
+        padding: 0px 20px 30px 35px;
+        width: 500px;
+      }
+      li {
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+        height: 200px;
+        width: 236px;
+      }
+      h1 {
+        background-color: #FFF;
+        display: inline;
+        font-size: 25px;
+        position: relative;
+        padding: 0px 10px;
+        top: -20px;
+      }
+      p {
+        font-size: 18px;
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <ul>
+        <li id="stark"></li>
+        <li id="targaryen"></li>
+        <li id="lannister"></li>
+        <li id="baratheon"></li>
+      </ul>
+      <div id="info"></div>
+    </div>
+  </body>
+</html>
