@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="ninjas_styles.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  "use strict";
+  $( document ).ready(function() {
+    $("img").click(function(){
+      $(this).hide();
+    })
+
+    $("button").click(function(){
+      $("img").show();
+    })
+
+  })
+  </script>
+</head>
+<body>
+  <div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+  </div>
+
+  <div>
+
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "container">
+      <img src="http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+    <div id = "http://markfisherfitness.com/wp-content/uploads/2012/11/ninjas_deserve_hugs_too_zpsfb979c48.jpg" alt="image" style="height:  300px;">
+    </div>
+  </div>
+
+  <button>restore</button>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Disappearing Ninja</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            var HTMLstring = "";
+            for(var i = 0; i < 8; i++){
+                HTMLstring += '<img src="ninja.jpeg" alt="ninja_picture">'
+            }
+            HTMLstring += '<button>Restore</button>'
+            $(document).ready(function(){
+                $(".container").append(HTMLstring)
+
+                $("img").click(function(){
+                    $(this).hide("slow");
+                })
+
+                $("button").click(function(){
+                    $("img").show();
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container">
+
+        </div>
+    </body>
+</html>
+ -->
